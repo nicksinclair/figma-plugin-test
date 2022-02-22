@@ -1,17 +1,26 @@
 <h2>Rectangle Creator</h2>
-<p>Count: <input id="count" value="5"></p>
+
+<p>Count: <input id="count" value="5" /></p>
+<p>Rotation: <input id="rotation" value="45" /></p>
+
 <button id="create">Create</button>
 <button id="cancel">Cancel</button>
+
 <script>
+  document.getElementById("create").onclick = () => {
+    const countTextbox = document.getElementById("count");
+    const rotationTextbox = document.getElementById("rotation");
 
-document.getElementById('create').onclick = () => {
-  const textbox = document.getElementById('count');
-  const count = parseInt(textbox.value, 10);
-  parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*')
-}
+    const count = parseInt(countTextbox.value, 10);
+    const rotation = parseInt(rotationTextbox.value, 10);
 
-document.getElementById('cancel').onclick = () => {
-  parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
-}
+    parent.postMessage(
+      { pluginMessage: { type: "create-rectangles", count, rotation } },
+      "*"
+    );
+  };
 
+  document.getElementById("cancel").onclick = () => {
+    parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
+  };
 </script>
