@@ -1,13 +1,21 @@
 {
-  "name": "Figma-Plugin-Test",
+  "name": "figma-plugin-test",
   "version": "1.0.0",
   "description": "Your Figma plugin",
   "main": "code.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"
   },
-  "author": "",
-  "license": "",
+  "author": {
+    "name": "Nick Sinclair",
+    "email": "nick.sinclair98@gmail.com",
+    "url": "https://nicksinclair.github.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicksinclair/figma-plugin-test.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "@figma/plugin-typings": "^1.42.1",
